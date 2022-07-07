@@ -52,7 +52,7 @@ func parseEnvFile(path string) ([]string, error) {
 		return vars, fmt.Errorf("error reading env file: %v", err)
 	}
 
-	re, err := regexp.Compile(`(\w+)=`)
+	re, err := regexp.Compile(`(\w+)=?`)
 	if err != nil {
 		return vars, fmt.Errorf("error parsing env regex: %v", err)
 	}
